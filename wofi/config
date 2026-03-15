@@ -1,0 +1,5 @@
+style=/home/keith/.config/wofi/styles.css
+mode=drun
+prompt=Search
+allow_images=true
+hide_scroll=true
