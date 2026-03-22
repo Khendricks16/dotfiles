@@ -1,0 +1,61 @@
+{
+    // Turn off some of the telemetry from Microsoft
+    "telemetry.telemetryLevel": "off",
+
+    // Hide the File/Edit/Selection/View/Go up at the top
+    "window.menuBarVisibility": "compact",
+
+    // Hide the minimap thing on the right
+    "editor.minimap.enabled": false,
+
+    // ============================================
+    //   VIM Stuff
+    // ============================================
+    "keyboard.dispatch": "keyCode",
+    "editor.lineNumbers": "relative",
+
+    // Leader key
+    "vim.leader": "<Space>",
+
+    // NORMAL MODE custom keybindings
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // NAVIGATION
+        // Switch between open files
+        { "before": ["<S-h>"], "commands": [":bprevious"] },
+        { "before": ["<S-l>"], "commands": [":bnext"] },
+        // Split/Create panes
+        { "before": ["leader", "L"], "commands": [":vsplit"] },
+        { "before": ["leader", "J"], "commands": [":split"] },
+        // Focus on/Jump to this pane
+        { "before": ["leader", "h"], "commands": ["workbench.action.focusLeftGroup"] },
+        { "before": ["leader", "j"], "commands": ["workbench.action.focusBelowGroup"] },
+        { "before": ["leader", "k"], "commands": ["workbench.action.focusAboveGroup"] },
+        { "before": ["leader", "l"], "commands": ["workbench.action.focusRightGroup"] },
+        // Quick Writes/Saves
+        { "before": ["leader", "w"], "commands": [":w!"] },
+        { "before": ["leader", "q"], "commands": [":q!"] },
+        { "before": ["leader", "x"], "commands": [":x!"] },
+        // Jump to the next or previous problems
+        { "before": ["[", "d"], "commands": ["editor.action.marker.prev"] },
+        { "before": ["]", "d"], "commands": ["editor.action.marker.next"] },
+        // Quick open for files
+        { "before": ["leader", "d", "f"], "commands": ["workbench.action.quickOpen"] },
+        // Quick paste from system clipboard
+        { "before": ["leader", "p"], "commands" : ["editor.action.clipboardPasteAction"] },
+    ],
+
+    // VISUAL MODE custom keybindings
+    "vim.visualModeKeyBindings": [
+        // Quick yank into system clipboard
+        { "before": ["leader", "y"], "commands" : ["editor.action.clipboardCopyAction"] },
+
+        // Stay in visual mode while indenting
+        { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+        { "before": [">"], "commands": ["editor.action.indentLines"] },
+        // Move selected lines while staying in visual mode
+        { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+        { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+        // toggle comment selection
+        { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+    ],
+}
