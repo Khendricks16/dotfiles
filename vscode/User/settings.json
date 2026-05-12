@@ -2,11 +2,13 @@
     // Turn off some of the telemetry from Microsoft
     "telemetry.telemetryLevel": "off",
 
+    // Hide the minimap thing on the right
+    "editor.minimap.enabled": false,
+
     // Hide the File/Edit/Selection/View/Go up at the top
     "window.menuBarVisibility": "compact",
 
-    // Hide the minimap thing on the right
-    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Visual Studio Dark - C++",
 
     // ============================================
     //   VIM Stuff
@@ -40,6 +42,8 @@
         { "before": ["]", "d"], "commands": ["editor.action.marker.next"] },
         // Quick open for files
         { "before": ["leader", "d", "f"], "commands": ["workbench.action.quickOpen"] },
+        // Quick open the project wide search menu
+        { "before": ["leader", "d", "s"], "commands": ["workbench.view.search"] },
         // Quick paste from system clipboard
         { "before": ["leader", "p"], "commands" : ["editor.action.clipboardPasteAction"] },
     ],

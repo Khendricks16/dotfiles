@@ -1,8 +1,68 @@
 // Place your key bindings in this file to override the defaults
 [
+    // =================================
+    // Side bar (File Tree) navigation
+    // =================================
     {
-        // Open up the sideBar
+        // Open up the side bar
         "command": "workbench.action.toggleSidebarVisibility",
         "key": "ctrl+e"
+    },
+    {
+        // Make sure that we focus on the side bar when we open it up
+        "command": "workbench.files.action.focusFilesExplorer",
+        "key": "ctrl+e",
+        "when": "editorTextFocus"
+    },
+    {
+        // Make a new file
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        // Rename a file
+        "command": "renameFile",
+        "key": "r",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        // Make a new directory
+        "key": "shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
+    },
+    {
+        // Delete a file
+        "command": "deleteFile",
+        "key": "d",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    // =================================
+    // Terminal navigation
+    // =================================
+    {
+        // Create a new terminal process
+        "key": "ctrl+shift+n",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    {
+        // Kill a terminal process
+        "key": "ctrl+shift+q",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    {
+        // Go down to the next terminal process
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        // Go up to the previous terminal process
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
     },
 ]
