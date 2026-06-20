@@ -5,13 +5,11 @@
     // Hide the minimap thing on the right
     "editor.minimap.enabled": false,
 
-    // Hide the File/Edit/Selection/View/Go up at the top
     "window.menuBarVisibility": "compact",
-
     "workbench.colorTheme": "Visual Studio Dark - C++",
 
     // ============================================
-    //   VIM Stuff
+    //                 VIM Stuff
     // ============================================
     "keyboard.dispatch": "keyCode",
     "editor.lineNumbers": "relative",
@@ -19,9 +17,8 @@
     // Leader key
     "vim.leader": "<Space>",
 
-    // NORMAL MODE custom keybindings
+    // ====== NORMAL MODE =========
     "vim.normalModeKeyBindingsNonRecursive": [
-        // NAVIGATION
         // Switch between open files
         { "before": ["<S-h>"], "commands": [":bprevious"] },
         { "before": ["<S-l>"], "commands": [":bnext"] },
@@ -33,6 +30,10 @@
         { "before": ["leader", "j"], "commands": ["workbench.action.focusBelowGroup"] },
         { "before": ["leader", "k"], "commands": ["workbench.action.focusAboveGroup"] },
         { "before": ["leader", "l"], "commands": ["workbench.action.focusRightGroup"] },
+        // Increase/Decrease the width of the pane that you are on
+        { "before": ["leader", "<right>"], "commands": ["workbench.action.increaseViewWidth"] },
+        { "before": ["leader", "<left>"], "commands": ["workbench.action.decreaseViewWidth"] },
+        { "before": ["leader", "="], "commands": ["workbench.action.evenEditorWidths"] },
         // Quick Writes/Saves
         { "before": ["leader", "w"], "commands": [":w!"] },
         { "before": ["leader", "q"], "commands": [":q!"] },
@@ -44,11 +45,22 @@
         { "before": ["leader", "d", "f"], "commands": ["workbench.action.quickOpen"] },
         // Quick open the project wide search menu
         { "before": ["leader", "d", "s"], "commands": ["workbench.view.search"] },
+        // Quick jump to the definition of something
+        { "before": ["leader", "i"], "commands": ["editor.action.revealDefinition"] },
+        // Quick jump to the declaration of something
+        { "before": ["leader", "o"], "commands": ["editor.action.revealDeclaration"] },
         // Quick paste from system clipboard
         { "before": ["leader", "p"], "commands" : ["editor.action.clipboardPasteAction"] },
+        // Refocus screen after trying to navigate up and down quickly with '{' or '}'
+        { "before": ["{"], "after" : ["{", "z", "z"] },
+        { "before": ["}"], "after" : ["}", "z", "z"] },
+
+
+        // Quick jump to the header/implementation file (C/C++)
+        { "before": ["leader", "O"], "commands" : ["C_Cpp.SwitchHeaderSource"] }
     ],
 
-    // VISUAL MODE custom keybindings
+    // ====== VISUAL MODE =========
     "vim.visualModeKeyBindings": [
         // Quick yank into system clipboard
         { "before": ["leader", "y"], "commands" : ["editor.action.clipboardCopyAction"] },
